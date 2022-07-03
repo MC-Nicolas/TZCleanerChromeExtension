@@ -23,8 +23,15 @@
   const appContainer = document.getElementById('app');
   appContainer.style.backgroundColor = 'rgba(0,0,0,0.5)';
 
-  const el = document.getElementsByTagName('iframe');
-  el[el.length - 1].remove();
+  // const el = document.getElementsByTagName('iframe');
+  // if (el.length > 1) {
+  //   el[el.length - 1].remove();
+  // }
+
+  const notif = document.getElementById('onesignal-slidedown-dialog');
+  if (notif) {
+    notif.remove();
+  }
 
   const scripts = document.scripts;
   const arrScript = [...scripts];
@@ -46,6 +53,16 @@
       arrScript[i].remove();
     } else if (
       arrScript[i].src === 'https://curtlychit.com/fvkGRhTy6s99UV/29270'
+    ) {
+      arrScript[i].remove();
+    } else if (
+      arrScript[i].src ===
+      'https://static.zdassets.com/ekr/snippet.js?key=77196c29-9d2b-4414-bc79-7543a13d07e3'
+    ) {
+      arrScript[i].remove();
+    } else if (
+      arrScript[i].src ===
+      'https://cdnjs.cloudflare.com/ajax/libs/postscribe/2.0.8/postscribe.min.js'
     ) {
       arrScript[i].remove();
     }
